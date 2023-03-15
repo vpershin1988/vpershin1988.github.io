@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Седона</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="page-header">
+        <nav class="navigation">
+          <a class="navigation-logo" href="index.html">
+            <img class="page-header-logo" src="images/header-logo.svg" width="140" height="70"
+              alt="Логотип города Седона">
+          </a>
+          <ul class="navigation-list navigation-list-menu">
+            <li class="navigation-item">
+              <a class="navigation-link" href="index.html"> Главная </a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link" href="#"> О Cедоне </a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link navigation-link-current" href="#"> Гостиницы </a>
+            </li>
+          </ul>
+          <ul class="navigation-list navigation-user">
+            <li class="navigation-item">
+              <a class="navigation-link-user navigation-link-search" href="#">
+                <span class="visually-hidden"> Поиск </span>
+              </a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link-user navigation-link-like" href="#">
+                <span class="visually-hidden"> Избранное </span>
+                <span class="visually-hidden"> 12 отелей </span>
+              </a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link button button-brown" href="#"> Хочу сюда! </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main-inner main-container">
+        <section class="catalog">
+          <header class="inner-header">
+            <h1 class="inner-header-title">Гостиницы Седоны</h1>
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs-item">
+                <a class="breadcrumbs-link breadcrumbs-main" href="index.html">
+                  <svg  width="13" height="13" viewBox="0 0 13 13"  xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6.5 0.5L0.5 6.30006V12.5001H12.5V6.30006L6.5 0.5ZM11.5 11.5001H1.5V6.70005L6.5 1.9L11.5 6.70005V11.5001Z"
+                      fill="white" />
+                    <path d="M4.5 10.5001H5.5V8.00005H7.5V10.5001H8.5V7.00005H4.5V10.5001Z" fill="white" />
+                  </svg>
+                  <span class="visually-hidden">Главная</span>
+                </a>
+              </li>
+              <li class="breadcrumbs-item">
+                <a class="breadcrumbs-link" href="#">Гостиницы</a>
+              </li>
+            </ul>
+          </header>
+          <div class="catalog-header-form">
+            <h2 class="visually-hidden">Список отелей с фильтрами</h2>
+            <form class="catalog-list-button" action="https://echo.htmlacademy.ru/" method="get">
+              <fieldset class="catalog-filter-group">
+                <legend class="catalog-filter-title">Инфраструктура:</legend>
+                <ul class="catalog-filter-list catalog-infrastructure">
+                  <li class="catalog-filter-item">
+                    <label  class="control">
+                     <input class="control-input visually-hidden" type="checkbox" name="swimming-pool" checked>
+                     <span class="control-mark"></span>
+                     <span class="control-label">Бассейн</span>
+                    </label>
+                  </li>
+                  <li class="catalog-filter-item">
+                    <label class="control">
+                      <input class="control-input visually-hidden" type="checkbox" name="parking" checked>
+                      <span class="control-mark"></span>
+                      <span class="control-label">Парковка</span>
+                    </label>
+                  </li>
+                  <li class="catalog-filter-item">
+                    <label class="control">
+                      <input class="control-input visually-hidden" type="checkbox" name="wi-fi">
+                      <span class="control-mark"></span>
+                      <span class="control-label">Wi-Fi</span>
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset class="catalog-filter-group">
+                <legend class="catalog-filter-title">Тип Жилья:</legend>
+                <ul class="catalog-filter-list catalog-house">
+                  <li class="catalog-filter-item">
+                    <label class="control">
+                      <input class="control-input visually-hidden" type="radio" name="product-group" value="hotels"
+                        checked>
+                      <span class="control-mark"></span>
+                      <span class="control-label">Гостиница</span>
+                    </label>
+                  </li>
+                  <li class="catalog-filter-item">
+                    <label class="control">
+                      <input class="control-input visually-hidden" type="radio" name="product-group" value="motels">
+                      <span class="control-mark"></span>
+                      <span class="control-label">Мотель</span>
+                    </label>
+                  </li>
+                  <li class="catalog-filter-item">
+                    <label class="control">
+                      <input class="control-input visually-hidden" type="radio" name="product-group"
+                        value="appartments">
+                      <span class="control-mark"></span>
+                      <span class="control-label">Аппартаменты</span>
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset class="catalog-filter-group cost">
+                <legend class="catalog-filter-title">Стоимость, Р:</legend>
+                <div class="range">
+                  <div class="range-wrapper-inputs">
+                    <input class="range-input range-input-min" id="min" type="number" value="0" name="min-price" placeholder="Цена">
+                    <label for="min" class="catalog-filter-label min-price">от</label>
+                    <input class="range-input range-input-max" id="max" type="number" value="9000" name="max-price" placeholder="Цена">
+                    <label for="max" class="catalog-filter-label max-price">до</label>
+                  </div>
+                  <div class="range-scale">
+                    <div class="range-bar" >
+                      <button class="range-toggle toggle-min" type="button">
+                        <span class="visually-hidden">Изменить минимальную цену.</span>
+                      </button>
+                      <button class="range-toggle toggle-max" type="button">
+                        <span class="visually-hidden">Изменить максимальную цену.</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <ul class="catalog-buttons">
+                <li class="catalog-buttons-item">
+                  <button class="button button-apply button-blue" type="submit">Применить</button>
+                </li>
+                <li class="catalog-buttons-item">
+                  <button class="button catalog-filter-clear" type="reset"> Сбросить </button>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </section>
+        <section class="hotels">
+          <div class="hotels-sorting">
+            <h2 class="visually-hidden">Поиск гостиницы</h2>
+            <p class="hotels-found">Найдено гостиниц: 38 </p>
+            <select class="select-control" aria-label="Сортировка">
+              <option value="cheap">Сначала дешёвые</option>
+              <option value="popular">Сначала популярные</option>
+              <option value="expensive">Сначала дорогие</option>
+            </select>
+            <div class="viewchange">
+              <a class="button button-viewchange button-gallery" href="#">
+                <span class="visually-hidden">Показать галерею</span>
+              </a>
+              <a class="button button-viewchange button-slideshow" href="#">
+                <span class="visually-hidden">Показать слайдшоу</span>
+              </a>
+              <a class="button button-viewchange button-list" href="#">
+                <span class="visually-hidden">Показать список</span>
+              </a>
+            </div>
+          </div>
+          <ul class="hotel-list">
+            <li class="hotel-card">
+              <a class="hotel-card-link" href="product.html">
+                <img class="hotel-card-image" src="images/catalog-images/hotel-1.jpg" width="300" height="212"
+                  alt="Amara Resort & Spa">
+                <h3 class="hotel-card-title">Amara Resort & Spa</h3>
+              </a>
+              <div class="hotel-card-row">
+                <span class="hotel-card-description">Гостиница</span>
+                <span class="hotel-card-price">От 4000 ₽</span>
+              </div>
+              <div class="hotel-card-row">
+                <button class="hotel-card-button button button-brown" type="button">Подробнее</button>
+                <button class="hotel-card-button-favorite button button-blue" type="button">В Избранное</button>
+              </div>
+              <div class="hotel-card-row">
+                <p class="stars four-stars">
+                  <img class="stars four-stars" src="images/catalog-images/four-stars.svg" width="140" height="36"
+                    alt="4 звезды">
+                </p>
+                <p class="hotel-rating button"> Рейтинг: 8.5 </p>
+              </div>
+            </li>
+            <li class="hotel-card">
+              <a class="hotel-card-link" href="product.html">
+                <img class="hotel-card-image" src="images/catalog-images/hotel-2.jpg" width="300" height="212"
+                  alt="Villas at Poco Diablo">
+                <h3 class="hotel-card-title">Villas at Poco Diablo</h3>
+              </a>
+              <div class="hotel-card-row">
+                <span class="hotel-card-description">Гостиница</span>
+                <span class="hotel-card-price">От 5000 ₽</span>
+              </div>
+              <div class="hotel-card-row">
+                <button class="hotel-card-button button button-brown" type="button">Подробнее</button>
+                <button class="hotel-card-button-favorite-checked hotel-card-button-favorite button button-blue"
+                  type="button">В
+                  Избранном</button>
+              </div>
+              <div class="hotel-card-row">
+                <p class="stars four-stars">
+                  <img class="stars four-stars" src="images/catalog-images/four-stars.svg" width="140" height="36"
+                    alt="4 звезды">
+                </p>
+                <p class="hotel-rating button"> Рейтинг: 9.2 </p>
+              </div>
+            </li>
+            <li class="hotel-card">
+              <a class="hotel-card-link" href="product.html">
+                <img class="hotel-card-image" src="images/catalog-images/hotel-3.jpg" width="300" height="212"
+                  alt="Desert Quail Inn">
+                <h3 class="hotel-card-title">Desert Quail Inn</h3>
+              </a>
+              <div class="hotel-card-row">
+                <span class="hotel-card-description">Гостиница</span>
+                <span class="hotel-card-price">От 2500 ₽</span>
+              </div>
+              <div class="hotel-card-row">
+                <button class="hotel-card-button button button-brown" type="button">Подробнее</button>
+                <button class="hotel-card-button-favorite button button-blue" type="button">В Избранное</button>
+              </div>
+              <div class="hotel-card-row">
+                <p class="stars three-stars">
+                  <img class="stars three-stars" src="images/catalog-images/three-star.svg" width="140" height="36"
+                    alt="3 звезды">
+                </p>
+                <p class="hotel-rating button"> Рейтинг: 6.9 </p>
+              </div>
+            </li>
+            <li class="hotel-card">
+              <a class="hotel-card-link" href="product.html">
+                <img class="hotel-card-image" src="images/catalog-images/hotel-4.jpg" width="300" height="212"
+                  alt="GreenTree Inn">
+                <h3 class="hotel-card-title">GreenTree Inn</h3>
+              </a>
+              <div class="hotel-card-row">
+                <span class="hotel-card-description">Гостиница</span>
+                <span class="hotel-card-price">От 1500 ₽</span>
+              </div>
+              <div class="hotel-card-row">
+                <button class="hotel-card-button button button-brown" type="button">Подробнее</button>
+                <button class="hotel-card-button-favorite button button-blue" type="button">В Избранное</button>
+              </div>
+              <div class="hotel-card-row">
+                <p class="stars two-stars">
+                  <img class="stars two-stars" src="images/catalog-images/two-star.svg" width="140" height="36"
+                    alt="2 звезды">
+                </p>
+                <p class="hotel-rating button"> Рейтинг: 5.0 </p>
+              </div>
+            </li>
+          </ul>
+          <ul class="pagination">
+            <li class="pagination-item pagination-current">
+              <a class="pagination-link pagination-current" href="#">1</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link button-blue" href="#">2</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link button-blue" href="#">3</a>
+            </li>
+            <li class="pagination-item">
+              <a class="pagination-link button-blue" href="#">4</a>
+            </li>
+            <li class="pagination-item pagination-dots">
+              <span class="pagination-link-dots">...</span>
+            </li>
+            <li class="pagination-item button-ten">
+              <a class="pagination-link button-blue" href="#">10</a>
+            </li>
+          </ul>
+        </section>
+        <section class="newsletter background-color">
+          <h2 class="page-footer-title">Подпишитесь на рассылку</h2>
+          <p class="newsletter-description">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
+          <form class="newsletter-form newsletter-form-catalog" action="https://echo.htmlacademy.ru/" method="post">
+            <label class="visually-hidden" for="newsletter-email">Email</label>
+            <input class="field" placeholder="Ваш e-mail" type="email" name="newsletter-email" id="newsletter-email"
+              required>
+            <button class="button newsletter-button button-blue" type="submit">
+              Подписаться
+            </button>
+          </form>
+        </section>
+      </main>
+      <footer class="page-footer">
+        <section class="contacts">
+          <div class="footer-social">
+            <h2 class="visually-hidden">Социальные сети</h2>
+            <ul class="footer-social-list">
+              <li class="footer-social-item">
+                <a class="button social-vk" href="https://vk.com/htmlacademy">
+                  <span class="visually-hidden">ВКонтакте</span>
+                </a>
+              </li>
+              <li class="footer-social-item">
+                <a class="button social-tg" href="https://t.me/htmlacademy">
+                  <span class="visually-hidden">Телеграм</span>
+                </a>
+              </li>
+              <li class="footer-social-item">
+                <a class="button social-youtube" href="https://www.youtube.com/user/htmlacademyru">
+                  <span class="visually-hidden">Ютьюб</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-contacts">
+            <h2 class="visually-hidden">Телефон</h2>
+            <a class="footer-contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+          </div>
+          <div class="footer-logo">
+            <h2 class="visually-hidden">Логотип HTML-Academy</h2>
+            <a class="footer-logo-academy" href="https://htmlacademy.ru/">
+              <svg width="115" height="33" viewBox="0 0 115 34" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_33515_1190)">
+                  <path d="M0 13.2564V15.8564H2.5V13.2564H0Z" />
+                  <path
+                    d="M11.6 4.85645C10 4.85645 8.8 5.55645 8 6.55645H7.9V0.356445H5.9V15.8564H7.9V10.5564C7.9 8.45645 9.2 6.95645 11.2 6.95645C13 6.95645 14.1 8.35645 14.1 10.1564V15.8564H16.1V9.75644C16.2 6.75644 14.3 4.85645 11.6 4.85645Z" />
+                  <path
+                    d="M26.6 5.15645H21.8V1.45645H19.8V5.25645H17.9V7.25645H19.8V13.2564C19.8 14.9564 20.8 15.9564 22.5 15.9564H26.6V13.9564H22.9C22.2 13.9564 21.8 13.5564 21.8 12.8564V7.15645H26.6V5.15645Z" />
+                  <path
+                    d="M41.1 4.95645C39.5 4.95645 38.2 5.75644 37.6 7.05645H37.5C36.9 5.85645 35.7 4.95645 34.1 4.95645C32.7 4.95645 31.6 5.75645 31 6.75645H30.9V5.15645H29V15.7564H31V10.3564C31 8.35645 32 6.85645 33.6 6.85645C35.1 6.85645 36 7.85645 36 9.45645V15.7564H38V10.1564C38 7.75645 39.4 6.85645 40.6 6.85645C42.1 6.85645 43 7.85645 43 9.45645V15.7564H45V9.25644C45.1 6.75644 43.6 4.95645 41.1 4.95645Z" />
+                  <path
+                    d="M47.8 13.0564C47.8 14.7564 48.8 15.7564 50.6 15.7564H52.6V13.7564H50.9C50.2 13.7564 49.8 13.3564 49.8 12.6564V0.356445H47.8V13.0564Z" />
+                  <path
+                    d="M28.9 20.0564C28 18.9564 26.7 18.2564 25 18.2564C21.9 18.2564 19.6 20.5564 19.6 23.8564C19.6 27.1564 21.9 29.4564 25 29.4564C26.8 29.4564 28 28.6564 28.8 27.5564H28.9V29.1564H30.9V18.5564H28.9V20.0564ZM25.3 27.4564C23.1 27.4564 21.7 25.8564 21.7 23.8564C21.7 21.8564 23.1 20.2564 25.3 20.2564C27.5 20.2564 28.9 21.8564 28.9 23.8564C28.9 25.7564 27.5 27.4564 25.3 27.4564Z" />
+                  <path
+                    d="M44.2 22.3564C43.7 19.9564 41.6 18.2564 38.8 18.2564C35.4 18.2564 33.2 20.7564 33.2 23.8564C33.2 26.9564 35.4 29.4564 38.8 29.4564C41.6 29.4564 43.7 27.6564 44.2 25.2564H42.1C41.7 26.5564 40.4 27.5564 38.8 27.5564C36.6 27.5564 35.2 25.9564 35.2 23.9564C35.2 21.9564 36.6 20.3564 38.8 20.3564C40.4 20.3564 41.6 21.3564 42.1 22.5564H44.2V22.3564Z" />
+                  <path
+                    d="M55.1 20.0564C54.2 18.9564 52.9 18.2564 51.2 18.2564C48.1 18.2564 45.8 20.5564 45.8 23.8564C45.8 27.1564 48.1 29.4564 51.2 29.4564C53 29.4564 54.2 28.6564 55 27.5564H55.1V29.1564H57.1V18.5564H55.1V20.0564ZM51.5 27.4564C49.3 27.4564 47.9 25.8564 47.9 23.8564C47.9 21.8564 49.3 20.2564 51.5 20.2564C53.7 20.2564 55.1 21.8564 55.1 23.8564C55.1 25.7564 53.6 27.4564 51.5 27.4564Z" />
+                  <path
+                    d="M68.7 20.1564C67.8 19.0564 66.5 18.2564 64.8 18.2564C61.7 18.2564 59.4 20.5564 59.4 23.8564C59.4 27.1564 61.6 29.4564 64.8 29.4564C66.5 29.4564 67.8 28.6564 68.6 27.6564H68.7V29.1564H70.7V13.7564H68.7V20.1564ZM65.1 27.4564C62.9 27.4564 61.5 25.8564 61.5 23.8564C61.5 21.8564 62.9 20.2564 65.1 20.2564C67.3 20.2564 68.7 21.8564 68.7 23.8564C68.6 25.8564 67.2 27.4564 65.1 27.4564Z" />
+                  <path
+                    d="M78.3 18.2564C75 18.2564 72.8 20.7564 72.8 23.8564C72.8 26.8564 74.9 29.4564 78.3 29.4564C80.8 29.4564 82.8 28.1564 83.5 25.8564H81.4C80.9 26.8564 79.8 27.4564 78.4 27.4564C76.5 27.4564 75.1 26.1564 75 24.5564H83.8C84 20.9564 81.8 18.2564 78.3 18.2564ZM78.3 20.1564C80 20.1564 81.3 21.1564 81.6 22.7564H75.1C75.4 21.2564 76.6 20.1564 78.3 20.1564Z" />
+                  <path
+                    d="M98.2 18.2564C96.6 18.2564 95.3 19.0564 94.6 20.2564H94.5C93.9 19.0564 92.7 18.2564 91.1 18.2564C89.7 18.2564 88.6 18.9564 88 20.0564V18.5564H86.1V29.1564H88.1V23.7564C88.1 21.7564 89.1 20.3564 90.7 20.2564C92.2 20.2564 93.1 21.2564 93.1 22.8564V29.1564H95.1V23.5564C95.1 21.1564 96.5 20.2564 97.7 20.2564C99.2 20.2564 100.1 21.2564 100.1 22.8564V29.1564H102.1V22.6564C102.2 20.0564 100.7 18.2564 98.2 18.2564Z" />
+                  <path
+                    d="M109.4 27.3564L105.8 18.4564H103.6L108.4 30.0564C108.1 30.9564 107.7 31.2564 106.7 31.2564H104.2V33.2564H106.7C108.5 33.2564 109.5 32.4564 110.2 30.6564L114.9 18.4564H112.8L109.4 27.3564Z" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_33515_1190">
+                    <rect width="115" height="33" fill="white" transform="translate(0 0.356445)" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </div>
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>
